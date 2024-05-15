@@ -5,6 +5,11 @@ This code base is using the [Julia Language](https://julialang.org/) and
 to make a reproducible scientific project named
 > PDFoutline
 
+> Simple script to add outline to the pdf based on txt file that contains toble of content (copied from the pdf)
+
+
+
+
 To (locally) reproduce this project, do the following:
 
 0. Download this code base. Notice that raw data are typically not included in the

@@ -25,5 +25,5 @@ function level(strlst)
 end
 
 #! generate outline with toc.txt
-gentoc(datadir("toc.txt"), level) |> t -> addtoc(datadir("pictures.pdf"), t)
+gentoc(datadir("toc.txt"), level; off = 23) |> t -> addtoc(datadir("pictures.pdf"), t)
 

@@ -2,24 +2,24 @@
 Pdf = pyimport("pikepdf" => "Pdf")
 OutlineItem = pyimport("pikepdf" => "OutlineItem")
 
-function outlineitem(l1::String)
+function outlineitem(l1::String, off)
 
     lst = split(l1, " ")
     pg = parse(Int, lst[end])
 
-    OutlineItem(join(lst[1:end-1], " "),  pg)
+    OutlineItem(join(lst[1:end-1], " "),  pg+off)
 end
 
 
 
-function gentoc(toctxt, level::Function)
+function gentoc(toctxt, level::Function, off = 0)
 
     lines = readlines(toctxt)
 
     gentoc(lines, level)
 end
 
-function gentoc(lines::AbstractArray, level::Function)
+function gentoc(lines::AbstractArray, level::Function; off = 0)
 
     outlst = []
 
@@ -28,16 +28,16 @@ function gentoc(lines::AbstractArray, level::Function)
 
         if level(strlst) == 1
 
-            l1item = outlineitem(l1)
+            l1item = outlineitem(l1, off)
             push!(outlst, l1item)
         elseif level(strlst) == 2
 
-            l2item = outlineitem(l1)
+            l2item = outlineitem(l1, off)
             outlst[end].children.append(l2item)
 
         elseif level(strlst) == 3
 
-            l3item = outlineitem(l1)
+            l3item = outlineitem(l1, off)
             outlst[end].children[-1].children.append(l3item)
         end
     end

@@ -12,11 +12,11 @@ end
 
 
 
-function gentoc(toctxt, level::Function, off = 0)
+function gentoc(toctxt, level::Function; off = 0)
 
     lines = readlines(toctxt)
 
-    gentoc(lines, level)
+    gentoc(lines, level; off = off)
 end
 
 function gentoc(lines::AbstractArray, level::Function; off = 0)
@@ -59,5 +59,9 @@ function addtoc(pdfpath, outlst)
 end
 
 
+function toc2pdf(toc, pdf, level; off = 0)
+
+    gentoc(toc, level; off = off) |> t -> addtoc(pdf, t)
+end
 
 

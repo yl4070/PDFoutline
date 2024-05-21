@@ -10,8 +10,6 @@ function outlineitem(l1::String, off)
     OutlineItem(join(lst[1:end-1], " "),  pg+off)
 end
 
-
-
 function gentoc(toctxt, level::Function; off = 0)
 
     lines = readlines(toctxt)

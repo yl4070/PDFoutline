@@ -9,7 +9,7 @@
 /notebooks
 /_research
 /.CondaPkg
-/.node_modules
+/node_modules
 
 ################################################################################
 #                                    Julia                                     #

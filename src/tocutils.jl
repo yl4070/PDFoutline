@@ -2,7 +2,7 @@
 Pdf = pyimport("pikepdf" => "Pdf")
 OutlineItem = pyimport("pikepdf" => "OutlineItem")
 
-function outlineitem(l1::String, off; pagemod = nothing)
+function outlineitem(l1::AbstractString, off; pagemod = nothing)
 
     lst = split(l1 |> strip, " ")
     pg = parse(Int, lst[end])

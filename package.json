@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "@condorhero/merge-pdfs": "^0.0.7"
+  }
+}
